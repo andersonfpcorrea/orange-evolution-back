@@ -13,7 +13,8 @@
     "dev": "nodemon .",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json",
     "drop": "npx sequelize-cli db:drop",
-    "seed": "npx sequelize-cli db:seed:all"
+    "seed": "npx sequelize-cli db:seed:all",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,8 @@
     "sequelize-cli": "^6.5.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
     "eslint": "^8.26.0",
@@ -46,6 +49,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.10",
+    "husky": "^8.0.1",
     "mocha": "^10.1.0",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
