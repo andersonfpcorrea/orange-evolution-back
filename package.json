@@ -1,0 +1,54 @@
+{
+  "name": "orange-evolution-back",
+  "version": "1.0.0",
+  "description": "Backend service for the Orange Evolution app",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "start": "node .",
+    "test": "mocha __tests__/**/*.test.js --exit",
+    "dev": "nodemon .",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json",
+    "drop": "npx sequelize-cli db:drop",
+    "seed": "npx sequelize-cli db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andersonfpcorrea/orange-evolution-back.git"
+  },
+  "author": "Anderson Correa, Kamila Pantoja, Heloisa Moraes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andersonfpcorrea/orange-evolution-back/issues"
+  },
+  "homepage": "https://github.com/andersonfpcorrea/orange-evolution-back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.25.3",
+    "sequelize-cli": "^6.5.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "sinon": "^14.0.1"
+  }
+}

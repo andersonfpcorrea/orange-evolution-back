@@ -1,0 +1,29 @@
+{
+  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "spaced-comment": "off", // regra de espaços após o início de comentário
+    "no-console": "warn", // gera "warn" ao usar console.log()
+    "consistent-return": "off", // esta regra define se após "return" ser declarado deve haver algum valor
+    "func-names": "off", // requer ou não permite "function expressions" nomeadas
+    "object-shorthand": "off", // requer ou não permite a sintaxe curta de métodos/propriedades em objetos
+    "no-process-exit": "off", // não permite o uso de "process.exit()"
+    "no-param-reassign": ["error", { "props": true }], // não permite redefinição de parâmetros de funções
+    "no-return-await": "error", // não permite "return await" desnecessários.
+    "no-underscore-dangle": "off", // não permite o use de "dangling underscores"
+    "class-methods-use-this": "error", // obriga que métodos de classes usem "this"
+    "prefer-destructuring": ["error", { "object": true, "array": false }], // obriga desestruturação de arrays/objetos
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "caughtErrors": "all"
+      }
+    ], // não permite variáveis não utilizadas
+    "strict": "off",
+    "import/no-dynamic-require": "off",
+    "global-require": "off"
+  }
+}

@@ -6,6 +6,10 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors()); // TODO: Configurar cors antes do deploy
-app.use(morgan('dev'));
+
+// Development log
+if (process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 module.exports = app;
