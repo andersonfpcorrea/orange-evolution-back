@@ -5,9 +5,6 @@ services:
   node:
     # Imagem do container
     image: node:18.12
-    # Faz o build do Dockerfile da pasta atual e utiliza o resultado desse build
-    # como a imagem do container
-    # build: .
     # Nome do container para facilitar execução
     container_name: orange_api
     # Mesmo que `docker run -t`
