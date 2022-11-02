@@ -12,21 +12,47 @@ module.exports = {
       },
       type: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'CourseType',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
       },
       author: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'ContentAuthor',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
       },
       length: {
-        type: Sequelize.DATE,
+        type: Sequelize.TIME,
+        allowNull: false,
       },
       status: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'CouseStatus',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
       },
       url: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       roadmap: {
         type: Sequelize.INTEGER,
+        references: {
+          model: 'Roadmap',
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
       },
       createdAt: {
         allowNull: false,

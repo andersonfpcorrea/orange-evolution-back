@@ -1,7 +1,7 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
+
+const { Model } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Roadmap extends Model {
     /**
@@ -13,11 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Roadmap.init({
-    title: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Roadmap',
-  });
+  Roadmap.init(
+    {
+      title: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: 'Roadmap',
+    }
+  );
   return Roadmap;
 };

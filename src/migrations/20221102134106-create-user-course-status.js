@@ -4,20 +4,32 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('UserCourseStatuses', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-      },
       idUser: {
         type: Sequelize.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+          model: 'User',
+          key: 'id',
+        },
       },
       idCourse: {
         type: Sequelize.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+          model: 'Course',
+          key: 'id',
+        },
       },
       idStatus: {
         type: Sequelize.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+          model: 'CouseStatus',
+          key: 'id',
+        },
       },
       createdAt: {
         allowNull: false,
