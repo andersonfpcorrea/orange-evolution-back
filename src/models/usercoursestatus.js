@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'User',
-        key: 'id',
+        key: 'id_user',
       },
     },
     idCourse: {
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'Course',
-        key: 'id',
+        key: 'id_course',
       },
     },
     idStatus: {
@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'CourseStatus',
-        key: 'id',
+        key: 'id_status',
       },
     },
   }, { 
