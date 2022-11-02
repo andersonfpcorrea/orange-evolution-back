@@ -15,11 +15,20 @@ module.exports = (sequelize, DataTypes) => {
   }
   ContentAuthor.init(
     {
-      author: DataTypes.STRING,
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      author: {
+        type: DataTypes.STRING,
+        unique: true,
+      },
     },
     {
       sequelize,
       modelName: 'ContentAuthor',
+      tableName: 'content_authors',
     }
   );
   return ContentAuthor;

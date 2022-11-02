@@ -15,11 +15,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   Roadmap.init(
     {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       title: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: 'Roadmap',
+      tableName: 'roadmaps',
     }
   );
   return Roadmap;

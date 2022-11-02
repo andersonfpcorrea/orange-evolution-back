@@ -15,9 +15,33 @@ module.exports = (sequelize, DataTypes) => {
   }
   UserCourseStatus.init(
     {
-      idUser: DataTypes.INTEGER,
-      idCourse: DataTypes.INTEGER,
-      idStatus: DataTypes.INTEGER,
+      idUser: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+          model: 'User',
+          key: 'id',
+        },
+      },
+      idCourse: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+          model: 'Course',
+          key: 'id',
+        },
+      },
+      idStatus: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        allowNull: false,
+        references: {
+          model: 'CouseStatus',
+          key: 'id',
+        },
+      },
     },
     {
       sequelize,

@@ -15,11 +15,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   CouseStatus.init(
     {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       status: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: 'CouseStatus',
+      tableName: 'courses_statuses',
     }
   );
   return CouseStatus;

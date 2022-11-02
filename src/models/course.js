@@ -15,16 +15,46 @@ module.exports = (sequelize, DataTypes) => {
   }
   Course.init(
     {
-      type: DataTypes.INTEGER,
-      author: DataTypes.INTEGER,
+      id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      type: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'CourseType',
+          key: 'id',
+        },
+      },
+      author: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'ContentAuthor',
+          key: 'id',
+        },
+      },
       length: DataTypes.DATE,
-      status: DataTypes.INTEGER,
+      status: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'CouseStatus',
+          key: 'id',
+        },
+      },
       url: DataTypes.STRING,
-      roadmap: DataTypes.INTEGER,
+      roadmap: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'Roadmap',
+          key: 'id',
+        },
+      },
     },
     {
       sequelize,
       modelName: 'Course',
+      tableName: 'courses',
     }
   );
   return Course;

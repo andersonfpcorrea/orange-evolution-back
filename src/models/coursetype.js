@@ -15,11 +15,18 @@ module.exports = (sequelize, DataTypes) => {
   }
   CourseType.init(
     {
+      id: {
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true,
+        type: DataTypes.INTEGER,
+      },
       title: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: 'CourseType',
+      tableName: 'course_types',
     }
   );
   return CourseType;
