@@ -12,8 +12,9 @@ module.exports = {
       },
       type: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
-          model: 'CourseType',
+          model: 'course_types',
           key: 'id',
         },
         onUpdate: 'CASCADE',
@@ -21,8 +22,9 @@ module.exports = {
       },
       author: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
-          model: 'ContentAuthor',
+          model: 'content_authors',
           key: 'id',
         },
         onUpdate: 'CASCADE',
@@ -35,7 +37,7 @@ module.exports = {
       status: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'CouseStatus',
+          model: 'courses_status',
           key: 'id',
         },
         onUpdate: 'CASCADE',
@@ -47,8 +49,9 @@ module.exports = {
       },
       roadmap: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
-          model: 'Roadmap',
+          model: 'roadmaps',
           key: 'id',
         },
         onUpdate: 'CASCADE',
