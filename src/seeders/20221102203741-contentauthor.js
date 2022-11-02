@@ -178,12 +178,6 @@ module.exports = {
         updatedAt: '2022-11-02 16:00:30',
       },
       {
-        id: 29,
-        author: 'FIAP',
-        createdAt: '2022-11-02 15:00:30',
-        updatedAt: '2022-11-02 16:00:30',
-      },
-      {
         id: 30,
         author: 'Casa do Código',
         createdAt: '2022-11-02 15:00:30',
