@@ -1,52 +1,65 @@
-'use strict';
-
-const { Model } = require('sequelize');
-
 module.exports = (sequelize, DataTypes) => {
-  class UserCourseStatus extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  UserCourseStatus.init(
-    {
-      idUser: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-        references: {
-          model: 'User',
-          key: 'id',
-        },
-      },
-      idCourse: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-        references: {
-          model: 'Course',
-          key: 'id',
-        },
-      },
-      idStatus: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false,
-        references: {
-          model: 'CouseStatus',
-          key: 'id',
-        },
+  const UsersCourseStatus = sequelize.define("UsersCourseStatus", {
+    idUser: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'User',
+        key: 'id',
       },
     },
-    {
-      sequelize,
-      modelName: 'UserCourseStatus',
-    }
-  );
-  return UserCourseStatus;
+    idCourse: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'Course',
+        key: 'id',
+      },
+    },
+    idStatus: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      references: {
+        model: 'CourseStatus',
+        key: 'id',
+      },
+    },
+  }, { 
+    tableName: 'users_courses_status',
+    timestamps: false 
+  });
+
+  UsersCourseStatus.associate = (models) => {
+    models.Users.belongsToMany(models.Courses,
+      {
+        as: 'courses',
+        foreignKey: 'id_user',
+        through: UsersCourseStatus,
+        otherKey: 'id_course',
+        otherKey: 'id_status',
+      });
+
+    models.CourseStatus.belongsToMany(models.Courses,
+      {
+        as: 'courses',
+        foreignKey: 'id_status',
+        through: UsersCourseStatus,
+        otherKey: 'id_course',
+        otherKey: 'id_user'
+      });
+
+    models.Courses.belongsToMany(models.Users,
+      {
+        as: 'users',
+        foreignKey: 'id_courses',
+        through: UsersCourseStatus,
+        otherKey: 'id_status',
+        otherKey: 'id_user'
+      })
+  }
+
+  return UsersCourseStatus;
 };
