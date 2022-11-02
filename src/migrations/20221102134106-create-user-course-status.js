@@ -3,13 +3,13 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('users_courses_statuses', {
+    await queryInterface.createTable('users_courses_status', {
       idUser: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false,
         references: {
-          model: 'User',
+          model: 'users',
           key: 'id',
         },
       },
@@ -18,7 +18,7 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
         references: {
-          model: 'Course',
+          model: 'courses',
           key: 'id',
         },
       },
@@ -27,7 +27,7 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
         references: {
-          model: 'CouseStatus',
+          model: 'courses_status',
           key: 'id',
         },
       },
@@ -42,6 +42,6 @@ module.exports = {
     });
   },
   async down(queryInterface, _Sequelize) {
-    await queryInterface.dropTable('users_courses_statuses');
+    await queryInterface.dropTable('users_courses_status');
   },
 };
