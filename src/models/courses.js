@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'CourseType',
-        key: 'id',
+        key: 'type',
       },
     },
     author: {
@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       references: {
         model: 'ContentAuthor',
-        key: 'id',
+        key: 'author',
       },
     },
     length: {
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       references: {
         model: 'CouseStatus',
-        key: 'id',
+        key: 'status',
       },
     },
     url: DataTypes.STRING,
@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       references: {
         model: 'Roadmaps',
-        key: 'id',
+        key: 'roadmap',
       },
     },
   }, { 
