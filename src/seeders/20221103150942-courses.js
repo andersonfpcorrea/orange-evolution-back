@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+IDs 01 a 27: trilha "O início"
+*/
+
 module.exports = {
   up: async (queryInterface, _Sequelize) =>
     queryInterface.bulkInsert(
@@ -272,6 +276,93 @@ module.exports = {
           length: '00:08:00',
           status: 1,
           url: 'https://www.cursospm3.com.br/blog/mvp-o-que-e-e-como-construir-um-produto-minimo-viavel/',
+          roadmap: 4,
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
+        {
+          id: 21,
+          nameCourse:
+            'Soft Skills: o que são e os benefícios de desenvolvê-las',
+          type: 2,
+          author: 6,
+          length: '00:04:00',
+          status: 1,
+          url: 'https://www.alura.com.br/artigos/soft-skills-o-que-sao-e-os-beneficios-de-desenvolve-las',
+          roadmap: 4,
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
+        {
+          id: 22,
+          nameCourse: 'Aprimorando a comunicação',
+          type: 2,
+          author: 1,
+          length: '00:03:00',
+          status: 1,
+          url: 'https://medium.com/orangejuicefc/aprimorando-a-comunica%C3%A7%C3%A3o-3933cbc886b4',
+          roadmap: 4,
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
+        {
+          id: 23,
+          nameCourse: 'Por que melhorar a comunicação',
+          type: 2,
+          author: 1,
+          length: '00:04:00',
+          status: 1,
+          url: 'https://medium.com/orangejuicefc/por-que-um-programador-deve-desconstruir-a-ideia-de-que-n%C3%A3o-precisa-lidar-com-pessoas-e-como-9974bcebf4a9',
+          roadmap: 4,
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
+        {
+          id: 24,
+          nameCourse: 'UX Design e Comunicação',
+          type: 2,
+          author: 1,
+          length: '00:05:00',
+          status: 1,
+          url: 'https://medium.com/orangejuicefc/ux-design-e-comunica%C3%A7%C3%A3o-b32a44ef7e42',
+          roadmap: 4,
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
+        {
+          id: 25,
+          nameCourse:
+            'Coisas que você deveria saber antes de trabalhar em equipe',
+          type: 6,
+          author: 2,
+          length: '00:59:48',
+          status: 1,
+          url: 'https://www.youtube.com/watch?v=gG0zZoj595U',
+          roadmap: 4,
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
+        {
+          id: 26,
+          nameCourse:
+            'A poderosa união entre design de UX e desenvolvimento de software',
+          type: 2,
+          author: 8,
+          length: '00:05:00',
+          status: 1,
+          url: 'https://www.linkedin.com/pulse/poderosa-uni%C3%A3o-entre-design-de-ux-e-desenvolvimento-de-oliveira/?originalSubdomain=pt',
+          roadmap: 4,
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
+        {
+          id: 27,
+          nameCourse: 'LGPD: Desvendando o bicho de 7 cabeças',
+          type: 6,
+          author: 1,
+          length: '01:01:31',
+          status: 1,
+          url: 'https://www.youtube.com/watch?v=KKLDwHyQATA',
           roadmap: 4,
           createdAt: '2022-11-02 15:00:30',
           updatedAt: '2022-11-02 16:00:30',
