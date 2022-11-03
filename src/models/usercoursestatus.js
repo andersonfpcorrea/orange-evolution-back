@@ -1,32 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
   const UsersCourseStatus = sequelize.define("UsersCourseStatus", {
-    idUser: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      references: {
-        model: 'User',
-        key: 'id_user',
-      },
-    },
-    idCourse: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      references: {
-        model: 'Course',
-        key: 'id_course',
-      },
-    },
-    idStatus: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      references: {
-        model: 'CourseStatus',
-        key: 'id_status',
-      },
-    },
+    favoriteCourse: {
+      type: DataTypes.BOOLEAN,
+    }
   }, { 
     tableName: 'users_courses_status',
     timestamps: false 
@@ -36,28 +12,28 @@ module.exports = (sequelize, DataTypes) => {
     models.Users.belongsToMany(models.Courses,
       {
         as: 'courses',
-        foreignKey: 'id_user',
+        foreignKey: 'idUser',
         through: UsersCourseStatus,
-        otherKey: 'id_course',
-        otherKey: 'id_status',
+        otherKey: 'idCourse',
+        otherKey: 'idStatus',
       });
 
     models.CourseStatus.belongsToMany(models.Courses,
       {
         as: 'courses',
-        foreignKey: 'id_status',
+        foreignKey: 'idStatus',
         through: UsersCourseStatus,
-        otherKey: 'id_course',
-        otherKey: 'id_user'
+        otherKey: 'idCourse',
+        otherKey: 'idUser'
       });
 
     models.Courses.belongsToMany(models.Users,
       {
         as: 'users',
-        foreignKey: 'id_courses',
+        foreignKey: 'idCourses',
         through: UsersCourseStatus,
-        otherKey: 'id_status',
-        otherKey: 'id_user'
+        otherKey: 'idCtatus',
+        otherKey: 'idUser'
       })
   }
 
