@@ -10,6 +10,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
+      nameCourse: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       type: {
         type: Sequelize.INTEGER,
         allowNull: false,
