@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    title: DataTypes.STRING,
+    status: DataTypes.STRING,
   }, { 
     tableName: 'courses_status',
     timestamps: false 
@@ -14,4 +14,3 @@ module.exports = (sequelize, DataTypes) => {
 
   return CourseStatus;
 };
-
