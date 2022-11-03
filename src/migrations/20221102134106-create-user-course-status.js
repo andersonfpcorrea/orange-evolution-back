@@ -31,6 +31,9 @@ module.exports = {
           key: 'id',
         },
       },
+      favoriteCourse: {
+        type: Sequelize.BOOLEAN,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
