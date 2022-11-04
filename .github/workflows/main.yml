@@ -1,8 +1,8 @@
 name: 'Main'
 on: pull_request
 jobs:
-  ESLint:
-    name: Run linter
+  lint-and-tests:
+    name: Run linter and then tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
