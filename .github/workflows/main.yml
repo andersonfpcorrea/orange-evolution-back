@@ -1,8 +1,8 @@
 name: 'Main'
 on: pull_request
 jobs:
-  lint-and-tests:
-    name: Run linter and then tests
+  ESLint:
+    name: Run linter
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,21 +11,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
-      - uses: samin/mysql-action@v1
-        with:
-          host port: 3306
-          container port: 3306
-          mysql version: '8.0.31'
-          mysql database: 'orangedb_test'
-          mysql root password: 'root'
-          mysql user: 'root'
-          mysql password: 'root'
       - name: Install dependencies
         run: npm install
       - name: Run ESLint
         run: npm run lint
-      - name: Run Tests
-        run: npm start
-        run: npm test
-        env:
-          CI: true
