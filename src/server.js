@@ -1,3 +1,5 @@
 const app = require('./app');
 
-app.listen(3001, () => console.log('server running on port 3001'));
+app.listen(process.env.API_PORT, () =>
+  console.log('server running on port 3001')
+);

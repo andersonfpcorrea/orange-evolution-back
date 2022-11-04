@@ -36,8 +36,9 @@ services:
       MYSQL_HOST: db # Nome do service logo abaixo
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-      API_PORT: 3000
+      API_PORT: 3001
       NODE_ENV: 'development'
+      JWT_SECRET: 'segredo'
     networks:
       - orange_api_net
 
