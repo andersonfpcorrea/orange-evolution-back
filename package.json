@@ -10,6 +10,7 @@
     "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize db:seed:all",
     "start": "node .",
     "test": "mocha __tests__/**/*.test.js --exit",
+    "test:ci": "MYSQL_HOST=3306 MYSQL_DATABASE=orangedb_test MYSQL_USER=root MYSQL_PASSWORD=root && npm run start && npm run test",
     "dev": "nodemon .",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern",
     "drop": "npx sequelize-cli db:drop",

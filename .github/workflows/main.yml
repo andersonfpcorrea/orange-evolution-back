@@ -15,7 +15,19 @@ jobs:
         run: npm install
       - name: Run ESLint
         run: npm run lint
+
       - name: Run Tests
+        uses: samin/mysql-action@v1
+        with:
+          host port: 3306
+          container port: 3306
+          mysql version: '8.0.31'
+          mysql database: 'orangedb_test'
+          mysql root password: 'root'
+          mysql user: 'root'
+          mysql password: 'root'
+        
+        run: npm start
         run: npm test
         env:
           CI: true
