@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.createTable('courses', {
       id: {
         allowNull: false,
-        autoIncrement: true,
+        // autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
@@ -35,8 +35,7 @@ module.exports = {
         onDelete: 'RESTRICT',
       },
       length: {
-        type: Sequelize.TIME,
-        allowNull: false,
+        type: Sequelize.TIME, // Alguns conteúdos não tem duração (livros)
       },
       status: {
         type: Sequelize.INTEGER,
@@ -64,10 +63,12 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
       },
     });
   },

@@ -12,6 +12,8 @@ module.exports = {
           model: 'users',
           key: 'id',
         },
+        onDelete: 'RESTRICT',
+        onUpdate: 'CASCADE',
       },
       idCourse: {
         type: Sequelize.INTEGER,
@@ -21,6 +23,8 @@ module.exports = {
           model: 'courses',
           key: 'id',
         },
+        onDelete: 'RESTRICT',
+        onUpdate: 'CASCADE',
       },
       idStatus: {
         type: Sequelize.INTEGER,
@@ -30,6 +34,8 @@ module.exports = {
           model: 'courses_status',
           key: 'id',
         },
+        onDelete: 'RESTRICT',
+        onUpdate: 'CASCADE',
       },
       favoriteCourse: {
         type: Sequelize.BOOLEAN,
@@ -37,10 +43,12 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
+        defaultValue: Sequelize.NOW,
       },
     });
   },

@@ -12,9 +12,17 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       tableName: 'roadmaps',
-      timestamps: false,
+      timestamps: true,
+      underscored: true,
     }
   );
+
+  Roadmaps.associate = (models) => {
+    Roadmaps.hasMany(models.Courses, {
+      foreignKey: 'roadmap',
+      as: 'courses',
+    });
+  };
 
   return Roadmaps;
 };

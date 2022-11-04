@@ -11,32 +11,32 @@ module.exports = (sequelize, DataTypes) => {
       nameCourse: {
         allowNull: false,
         type: DataTypes.STRING,
+        field: 'name_course',
       },
       type: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'CourseType',
-          key: 'type',
+          model: 'CourseTypes',
+          key: 'id',
         },
       },
       author: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'ContentAuthor',
-          key: 'author',
+          model: 'ContentAuthors',
+          key: 'id',
         },
       },
       length: {
-        type: DataTypes.DATE,
-        allowNull: false,
+        type: DataTypes.DATE, // Permite "null" porque alguns cursos são livros
       },
       status: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'CouseStatus',
-          key: 'status',
+          model: 'CourseStatus',
+          key: 'id',
         },
       },
       url: DataTypes.STRING,
@@ -44,48 +44,35 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         references: {
           model: 'Roadmaps',
-          key: 'roadmap',
+          key: 'id',
         },
       },
     },
     {
       tableName: 'courses',
-      timestamps: false,
+      timestamps: true,
+      underscored: true,
     }
   );
 
   Courses.associate = function (models) {
-    models.Courses.belongsTo(models.ContentAuthors, {
+    Courses.belongsTo(models.ContentAuthors, {
       foreignKey: 'author',
-      as: 'Author',
+      as: 'authors',
     });
   };
 
   Courses.associate = function (models) {
-    models.Courses.belongsTo(models.CourseTypes, {
+    Courses.belongsTo(models.CourseTypes, {
       foreignKey: 'type',
-      as: 'CourseType',
+      as: 'types',
     });
   };
 
   Courses.associate = function (models) {
-    models.Courses.belongsTo(models.Roadmaps, {
+    Courses.belongsTo(models.Roadmaps, {
       foreignKey: 'roadmap',
-      as: 'Roadmap',
-    });
-  };
-
-  Courses.associate = function (models) {
-    models.Courses.belongsTo(models.Roadmaps, {
-      foreignKey: 'roadmap',
-      as: 'Roadmap',
-    });
-  };
-
-  Courses.associate = function (models) {
-    models.Courses.belongsTo(models.CourseStatus, {
-      foreignKey: 'status',
-      as: 'Status',
+      as: 'roadmaps',
     });
   };
 

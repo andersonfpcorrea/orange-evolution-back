@@ -329,6 +329,12 @@ module.exports = {
           createdAt: '2022-11-02 15:00:30',
           updatedAt: '2022-11-02 16:00:30',
         },
+        {
+          id: 55,
+          author: 'Outros',
+          createdAt: '2022-11-02 15:00:30',
+          updatedAt: '2022-11-02 16:00:30',
+        },
       ],
       {}
     ),
