@@ -25,7 +25,6 @@ jobs:
           mysql root password: 'root'
           mysql user: 'root'
           mysql password: 'root'
-
         run: npm start
         run: npm test
         env:
