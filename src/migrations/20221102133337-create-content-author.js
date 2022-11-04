@@ -6,7 +6,7 @@ module.exports = {
     await queryInterface.createTable('content_authors', {
       id: {
         allowNull: false,
-        // autoIncrement: true,
+        autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },

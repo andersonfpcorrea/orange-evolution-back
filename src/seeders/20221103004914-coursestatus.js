@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  up: async (queryInterface, Sequelize) =>
+  up: async (queryInterface, _Sequelize) =>
     queryInterface.bulkInsert(
       'courses_status',
       [

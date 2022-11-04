@@ -11,7 +11,7 @@
     "start": "node .",
     "test": "mocha __tests__/**/*.test.js --exit",
     "dev": "nodemon .",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern",
     "drop": "npx sequelize-cli db:drop",
     "seed": "npx sequelize-cli db:seed:all",
     "prepare": "husky install"
