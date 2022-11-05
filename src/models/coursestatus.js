@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       tableName: 'courses_status',
       timestamps: true,
-      underscored: true,
     }
   );
 

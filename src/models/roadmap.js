@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       tableName: 'roadmaps',
       timestamps: true,
-      underscored: true,
     }
   );
 
