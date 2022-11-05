@@ -30,14 +30,15 @@ services:
     # na notação porta_de_fora:porta_de_dentro
     ports:
       # Expõe a porta padrão da aplicação:
-      - 3000:3000
+      - 3001:3001
     # Configura as variáveis de ambiente dentro do container
     environment:
       MYSQL_HOST: db # Nome do service logo abaixo
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-      API_PORT: 3000
+      API_PORT: 3001
       NODE_ENV: 'development'
+      JWT_SECRET: 'segredo'
     networks:
       - orange_api_net
 
