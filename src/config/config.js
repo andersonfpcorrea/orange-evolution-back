@@ -7,6 +7,9 @@ const config = {
   host: process.env.MYSQLHOST,
   port: process.env.MYSQLPORT,
   dialect: 'mysql',
+  dialectOptions: {
+    timezone: 'Z',
+  },
 };
 
 module.exports = {
