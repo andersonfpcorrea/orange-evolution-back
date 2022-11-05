@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const xss = require('xss-clean');
-//const cors = require('cors');
+const cors = require('cors');
 
 const { authController, globalErrorHandler } = require('./controllers');
 
@@ -17,12 +17,16 @@ const {
 
 const app = express();
 
-//app.use(cors()); // TODO: Configurar cors antes do deploy
-
 // Development log
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+// Allow cross origin request. It sets "Access-Controll-Allow-Origin" to "*"
+app.use(cors());
+
+// Configure response to OPTIONS http requests:
+app.options('*', cors());
 
 // Limit requests from the same IP
 const limiter = rateLimit({
