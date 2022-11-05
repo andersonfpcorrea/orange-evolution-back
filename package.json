@@ -4,7 +4,7 @@
   "description": "Backend service for the Orange Evolution app",
   "main": "src/server.js",
   "engines": {
-    "node": "^18"
+    "node": ">=16" 
   },
   "scripts": {
     "prestart": "npx sequelize db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize db:seed:all",

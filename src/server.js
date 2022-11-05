@@ -5,8 +5,8 @@ process.on('uncaughtException', (err) => {
   console.log(err.name, err.message);
 });
 
-const server = app.listen(process.env.API_PORT, () =>
-  console.log(`Server running on port ${process.env.API_PORT}`)
+const server = app.listen(process.env.PORT, () =>
+  console.log(`Server running on port ${process.env.PORT}`)
 );
 
 process.on('unhandledRejection', (err) => {
