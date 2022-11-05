@@ -46,3 +46,12 @@ describe('Making a GET request on /roadmaps', function() {
     expect(response.body).to.deep.equal(output);
   })
 })
+
+describe('Making a GET request on /roadmaps/1', function () {
+  it('returns a roadmap whose id is 1', async function() {
+    const response = await chai.request(app).get('/roadmaps/1');
+
+    expect(response.status).to.be.equal(200);
+    expect(response.body).to.deep.equal(output[0]);
+  })
+})
