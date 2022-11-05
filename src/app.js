@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const xss = require('xss-clean');
+const helmet = require('helmet');
 const cors = require('cors');
 
 const { authController, globalErrorHandler } = require('./controllers');
@@ -27,6 +28,9 @@ app.use(cors());
 
 // Configure response to OPTIONS http requests:
 app.options('*', cors());
+
+// Set security HTTP headers
+app.use(helmet());
 
 // Limit requests from the same IP
 const limiter = rateLimit({
