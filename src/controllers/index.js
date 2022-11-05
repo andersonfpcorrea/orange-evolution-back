@@ -2,6 +2,7 @@ const authController = require('./authController');
 const globalErrorHandler = require('./errorController');
 const userController = require('./userController');
 const roadmapController = require('./roadmapController');
+const courseController = require('./courseController');
 const progressController = require('./progressController');
 
 module.exports = {
@@ -9,5 +10,6 @@ module.exports = {
   globalErrorHandler,
   userController,
   roadmapController,
+  courseController,
   progressController,
 };
