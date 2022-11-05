@@ -4,7 +4,7 @@ const morgan = require('morgan');
 //const cors = require('cors');
 
 const { authController, globalErrorHandler } = require('./controllers');
-const { userRouter } = require('./routes');
+const { userRouter, roadmapRouter } = require('./routes');
 
 const app = express();
 
@@ -18,8 +18,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 app.use('/login', authController.login);
-
 app.use('/users', userRouter);
+app.use('/roadmaps', roadmapRouter);
 
 app.use(globalErrorHandler);
 

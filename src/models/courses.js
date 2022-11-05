@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       nameCourse: {
         allowNull: false,
         type: DataTypes.STRING,
-        field: 'name_course',
       },
       type: {
         type: DataTypes.INTEGER,
@@ -51,7 +50,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       tableName: 'courses',
       timestamps: true,
-      underscored: true,
     }
   );
 

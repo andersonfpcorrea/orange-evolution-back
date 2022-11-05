@@ -6,7 +6,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
-        field: 'id_user',
         references: {
           model: 'users',
           key: 'id',
@@ -26,7 +25,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         primaryKey: true,
         allowNull: false,
-        field: 'id_status',
         references: {
           model: 'courses_status',
           key: 'id',
@@ -34,13 +32,11 @@ module.exports = (sequelize, DataTypes) => {
       },
       favoriteCourse: {
         type: DataTypes.BOOLEAN,
-        field: 'favorite_course',
       },
     },
     {
       tableName: 'users_courses_status',
       timestamps: true,
-      underscored: true,
     }
   );
 

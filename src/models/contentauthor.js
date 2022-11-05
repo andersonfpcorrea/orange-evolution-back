@@ -16,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
     {
       tableName: 'content_authors',
       timestamps: true,
-      underscored: true,
     }
   );
 

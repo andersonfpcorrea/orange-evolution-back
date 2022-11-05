@@ -7,7 +7,7 @@
     "node": ">=16"
   },
   "scripts": {
-    "prestart": "npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize db:seed:all",
+    "prestart": "npx sequelize db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize db:seed:all",
     "start": "node .",
     "test": "mocha __tests__/**/*.test.js --exit",
     "dev": "nodemon .",

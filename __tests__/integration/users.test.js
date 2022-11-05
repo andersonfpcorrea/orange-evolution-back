@@ -54,7 +54,7 @@ describe('Making a GET request on /users', function () {
 });
 
 describe('Making a GET request on /users/1', function () {
-  it('returns the user with id equal to 1', async function () {
+  it('returns the user whose id is 1', async function () {
     const response = await chai.request(app).get('/users/1');
 
     expect(response.status).to.be.equal(200);
