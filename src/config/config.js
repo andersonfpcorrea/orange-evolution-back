@@ -19,4 +19,7 @@ module.exports = {
   test: {
     ...config,
   },
+  dev: {
+    ...config,
+  },
 };
