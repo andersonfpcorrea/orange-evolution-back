@@ -33,9 +33,9 @@ services:
       - 3001:3001
     # Configura as variáveis de ambiente dentro do container
     environment:
-      MYSQL_HOST: db # Nome do service logo abaixo
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQLHOST: db # Nome do service logo abaixo
+      MYSQLUSER: root
+      MYSQLPASSWORD: root
       PORT: 3001
       NODE_ENV: 'development'
       JWT_SECRET: 'segredo'
