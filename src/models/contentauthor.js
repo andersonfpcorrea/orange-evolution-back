@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         unique: true,
       },
+      image: DataTypes.STRING,
     },
     {
       tableName: 'content_authors',

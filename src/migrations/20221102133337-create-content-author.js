@@ -13,6 +13,7 @@ module.exports = {
       author: {
         type: Sequelize.STRING,
       },
+      image: Sequelize.STRING,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
