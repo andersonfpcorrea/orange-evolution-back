@@ -37,15 +37,6 @@ module.exports = {
       length: {
         type: Sequelize.TIME, // Alguns conteúdos não tem duração (livros)
       },
-      status: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'courses_status',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'RESTRICT',
-      },
       url: {
         type: Sequelize.STRING,
         allowNull: false,
