@@ -1,6 +1,9 @@
-# Orange Evolution Back-end
+# Bem vindo ao projeto **Orange Evolution API** 🍊
 
-## Setup do projeto
+## Documentação 📚
+Acesse a documentação da API [aqui](https://documenter.getpostman.com/view/21880237/2s8YYHKNDS).
+
+## Setup do projeto 🔧
 
 - Express v.4.18.2
 - Sequelize v.6.25.3
