@@ -31,13 +31,6 @@ module.exports = (sequelize, DataTypes) => {
       length: {
         type: DataTypes.DATE, // Permite "null" porque alguns cursos são livros
       },
-      status: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'CourseStatus',
-          key: 'id',
-        },
-      },
       url: DataTypes.STRING,
       roadmap: {
         type: DataTypes.INTEGER,
