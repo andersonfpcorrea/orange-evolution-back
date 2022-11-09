@@ -1,6 +1,15 @@
-# Bem vindo ao projeto **Orange Evolution API** 🍊
+# Bem vindo ao projeto **Orange Evolution API**
+
+🍊 Esta API REST servirá o app Orange Evolution com cursos, trilhas, usuários e mais.
+
+🚧 Ainda em construção. Novas funcionalidade serão entregues quando necessárias para o desenvolvimento do app Orange Evolution (MVP).
+
+💻 A API foi desenvolvida com Node.js/Express, Sequelize ORM e um banco de dados MySQL. O deploy foi feito com Railway.
+
+⭐ Você pode conferir o repositório do front-end _[aqui](https://github.com/andersonfpcorrea/orange-evolution-front)_
 
 ## Documentação 📚
+
 Acesse a documentação da API [aqui](https://documenter.getpostman.com/view/21880237/2s8YYHKNDS).
 
 ## Setup do projeto 🔧
