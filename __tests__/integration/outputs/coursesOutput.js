@@ -595,4 +595,27 @@ const coursesOutput = [
   },
 ];
 
-module.exports = { coursesOutput };
+const queryResult = [
+  {
+    id: 41,
+    course: 'Instalar o Linux no Windows com o WSL',
+    type: 'Artigo',
+    author: 'Windows',
+    image: 'https://i.pravatar.cc/300',
+    length: '00:20:00',
+    url: 'https://docs.microsoft.com/pt-br/windows/wsl/install',
+    roadmap: 'Desenvolvimento Full Stack',
+  },
+  {
+    id: 42,
+    course: 'Terminal Linux',
+    type: 'Curso',
+    author: 'Udemy',
+    image: 'https://i.pravatar.cc/300',
+    length: '00:55:00',
+    url: 'https://www.udemy.com/course/terminal-de-comandos-linux/',
+    roadmap: 'Desenvolvimento Full Stack',
+  },
+];
+
+module.exports = { coursesOutput, queryResult };
