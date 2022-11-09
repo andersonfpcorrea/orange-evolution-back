@@ -10,7 +10,7 @@
 
 ## Documentação 📚
 
-Acesse a documentação da API [aqui](https://documenter.getpostman.com/view/21880237/2s8YYHKNDS).
+Acesse a documentação da API _[aqui](https://documenter.getpostman.com/view/21880237/2s8YYHKNDS)_.
 
 ## Setup do projeto 🔧
 
