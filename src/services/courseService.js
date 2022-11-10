@@ -6,7 +6,7 @@ const { sequelize } = require('../models');
  */
 exports.findAll = async (q) => {
   const query = q ? `%${q}%` : '%';
-  return sequelize.query(
+  const courses = await sequelize.query(
     `SELECT c.id, c.nameCourse AS course, ct.title AS type, ca.author AS author, ca.image, c.length, c.url, r.title AS roadmap
     FROM courses c
     INNER JOIN course_types ct
@@ -19,6 +19,8 @@ exports.findAll = async (q) => {
       type: QueryTypes.SELECT,
     }
   );
+  const quantity = courses.length;
+  return { quantity, courses };
 };
 
 exports.findById = async (id) =>
