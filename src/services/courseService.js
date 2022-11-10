@@ -7,7 +7,7 @@ const { sequelize } = require('../models');
 exports.findAll = async (q) => {
   const query = q ? `%${q}%` : '%';
   const courses = await sequelize.query(
-    `SELECT c.id, c.nameCourse AS course, ct.title AS type, ca.author AS author, ca.image, c.length, c.url, r.title AS roadmap
+    `SELECT c.id, c.nameCourse AS course, ct.title AS type, ca.author AS author, ca.image AS authorImage, c.length, c.url, r.title AS roadmap
     FROM courses c
     INNER JOIN course_types ct
     INNER JOIN content_authors ca
