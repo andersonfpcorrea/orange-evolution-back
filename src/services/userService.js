@@ -9,6 +9,10 @@ exports.findUser = async ({ email }) => {
   return result;
 };
 
-exports.findAll = async () => Users.findAll();
+exports.findAll = async () => {
+  const users = await Users.findAll();
+  const quantity = users.length;
+  return { quantity, users };
+};
 
 exports.findById = async (id) => Users.findOne({ where: { id } });
