@@ -23,12 +23,29 @@ exports.update = async ({
   lastName,
   email,
   password,
-  currentRoadmap,
+  roadmap,
   id,
 }) =>
   Users.update(
-    { firstName, lastName, email, password, currentRoadmap },
+    { firstName, lastName, email, password, currentRoadmap: roadmap },
     {
       where: { id },
     }
   );
+
+exports.createUser = async (userData) => {
+  const { firstName, lastName, email, password, roadmap } = userData;
+  const [user, created] = await Users.findOrCreate({
+    where: { email },
+    defaults: {
+      firstName,
+      lastName,
+      email,
+      password,
+      currentRoadmap: roadmap,
+      progress: 1,
+    },
+  });
+  if (created) return { success: user };
+  return { fail: 'User already exists in data base' };
+};
