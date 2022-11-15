@@ -1,9 +1,10 @@
 const { Users } = require('../models');
 
-exports.findUser = async ({ email }) => {
+exports.findUser = async ({ email, password }) => {
   const result = await Users.findOne({
     where: {
       email,
+      password,
     },
   });
   return result;
@@ -16,3 +17,18 @@ exports.findAll = async () => {
 };
 
 exports.findById = async (id) => Users.findOne({ where: { id } });
+
+exports.update = async ({
+  firstName,
+  lastName,
+  email,
+  password,
+  currentRoadmap,
+  id,
+}) =>
+  Users.update(
+    { firstName, lastName, email, password, currentRoadmap },
+    {
+      where: { id },
+    }
+  );

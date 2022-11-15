@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      photo: DataTypes.STRING,
+      currentRoadmap: DataTypes.STRING,
+      progress: DataTypes.INTEGER,
     },
     {
       tableName: 'users',

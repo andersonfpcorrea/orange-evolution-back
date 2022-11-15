@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
       },
       title: DataTypes.STRING,
+      image: DataTypes.STRING,
     },
     {
       tableName: 'roadmaps',

@@ -26,6 +26,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      photo: Sequelize.STRING,
+      currentRoadmap: Sequelize.STRING,
+      progress: Sequelize.INTEGER,
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
