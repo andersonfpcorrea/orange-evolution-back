@@ -23,11 +23,11 @@ exports.update = async ({
   lastName,
   email,
   password,
-  currentRoadmap,
+  roadmap,
   id,
 }) =>
   Users.update(
-    { firstName, lastName, email, password, currentRoadmap },
+    { firstName, lastName, email, password, currentRoadmap: roadmap },
     {
       where: { id },
     }

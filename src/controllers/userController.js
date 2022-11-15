@@ -25,6 +25,6 @@ exports.update = async (req, res) => {
     roadmap,
     id,
   });
-  const result = await userService.findUser({ email, password });
+  const result = await userService.findById(id);
   res.status(200).json(result);
 };
