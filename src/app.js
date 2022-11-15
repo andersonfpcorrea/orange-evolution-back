@@ -51,6 +51,7 @@ app.use(compression());
 
 // Routes
 app.use('/login', authController.login);
+app.use('/signup', authController.signup);
 app.use('/users', userRouter);
 app.use('/roadmaps', roadmapRouter);
 app.use('/courses', courseRouter);

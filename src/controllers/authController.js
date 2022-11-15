@@ -30,3 +30,18 @@ exports.login = async (req, res) => {
     user: { id, firstName, lastName, currentRoadmap, photo, email, progress },
   });
 };
+
+exports.signup = async (req, res) => {
+  const { firstName, lastName, email, password, roadmap } = req.body;
+  if (!firstName || !lastName || !email || !password || !roadmap)
+    throw new AppError(400, 'Some fields missing');
+  const { success, fail } = await userService.createUser({
+    firstName,
+    lastName,
+    email,
+    password,
+    roadmap,
+  });
+  if (fail) throw new AppError(404, fail);
+  res.status(201).json(success);
+};
