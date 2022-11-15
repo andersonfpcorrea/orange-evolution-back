@@ -12,6 +12,62 @@
 
 Acesse a documentação da API _[aqui](https://documenter.getpostman.com/view/21880237/2s8YYHKNDS)_.
 
+## Como rodar este projeto localmente
+
+Faço o clone do projeto:
+
+```
+git clone git@github.com:andersonfpcorrea/orange-evolution-back.git
+
+cd orange-evolution-back
+```
+
+Tenha instalado em sua máquina Docker e Docker Compose.
+
+Para subir os conteiners com a imagem do Node e do MySQL rode o seguinte comando:
+
+```
+docker-compose up -d
+```
+
+Para acessar o conteiner Node:
+
+```
+docker exec -it orange_api bash
+```
+
+Estando dentro do conteiner instale as dependências do projeto:
+
+```
+npm i
+```
+
+Para criar o banco de dados, criar as tabelas e popular com dados, use o seguinte comando:
+
+```
+npm run prestart
+```
+
+Para iniciar o servidor para desenvolvimento:
+
+```
+npm run dev
+```
+
+Para criar o banco, populá-lo e iniciar o servidor num único comando:
+
+```
+npm start
+```
+
+Para rodar testes de integração:
+
+```
+npm run test
+```
+
+O servidor usa a porta `3001` e o serviço mySQL a porta `33060`.
+
 ## Setup do projeto 🔧
 
 - Express v.4.18.2
